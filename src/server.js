@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname+ 'public'));
+app.use(express.static(__dirname+ '/dist/sbfix-test'));
 app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+ '/dist/ng-sbfix/index.html'));
+    res.sendFile(path.join(__dirname+ '/dist/sbfix-test/index.html'));
 })
