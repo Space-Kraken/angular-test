@@ -1,0 +1,37 @@
+<!-- Navbar Component -->
+<nav class="bg-gradient-to-tl from-purple-200 to-pink-300 fixed insert-x-0 w-full">
+    <div class="max-w-6xl mx-auto px-4">    
+        <div class="flex justify-between">
+            <div class="flex space-x-4">
+                <!-- Logo -->
+                <div>
+                    <a routerLink="/" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+                        <i class="bx bxl-medium-old mr-1 text-xl mb-1 text-blue-400"></i>
+                        <span class="font-bold">SBFix</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a routerLink="/color-selector" class="py-5 px-3 text-gray-700 hover:text-gray-900">ColorSelector</a>
+                    <a routerLink="/api-test" class="py-5 px-3 text-gray-700 hover:text-gray-900">ApiTest</a>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-1">
+                <button *ngIf='!session' (click)='logout()' class="py-5 px-3">Logout</button>
+                <a *ngIf='session' routerLink="/login" class="py-5 px-3">Login</a>
+                <a *ngIf='session' routerLink="/signin" class="py-2 px-3 border bg-pink-400 text-white hover:bg-yellow-300 text-sm hover:text-yellow-800 rounded transition duration-300"
+                >Signin</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="mobile-menu-button focus:outline-none">
+                    <i class="bx bx-menu text-3xl mt-1"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu flex flex-wrap md:hidden">
+        <a routerLink="/color-selector" class="block py-2 px-4 text-sm hover:bg-gray-200">ColorSelector</a>
+        <a routerLink="/api-test" class="block py-2 px-4 text-sm hover:bg-gray-200">ApiTest</a>
+        <a routerLink="/login" class="block py-2 px-4 text-sm hover:bg-gray-200">Login</a>
+        <a routerLink="/signin" class="block py-2 px-4 text-sm hover:bg-gray-200">Signin</a>
+    </div>
+</nav>

@@ -1,0 +1,24 @@
+<div class="flex flex-row justify-center">
+    <div class="flex flex-col items-center bg-white px-4 py-4 w-3/4 md:w-auto rounded-md shadow-xl">
+        <span class="hidden md:flex py-2 font-bold text-lg">Choose other color for components IU</span>
+        <span class="md:hidden py-2 font-bold text-lg">Choose a color</span>
+        <div class="flex w-full flex-wrap justify-center flex-row">
+            <span class="hidden md:flex font-thin mr-4">Click here:</span>
+            <input class="w-1/2 rounded" type="color" name="color"
+                [(ngModel)]="colorInput"
+                [ngStyle]="{'background-color': color}"
+            >
+        </div>
+        <div class="flex flex-row flex-wrap justify-around md:justify-between w-full mx-28 mt-8">
+            <button class="text-black border font-bold py-2 px-4 rounded-lg after:mix-blend-difference"
+            [ngStyle]="{'border-color': color}"
+            (click)="changeColor()"
+            ><span class="adjust">Change</span></button>
+            <button class="text-black border font-bold py-2 px-4 rounded-lg"
+            (click)="resetColor()"
+            [ngStyle]="{'border-color': color}"
+            >Reset</button>
+        </div>
+    </div>
+</div>
+

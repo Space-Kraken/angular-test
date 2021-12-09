@@ -1,0 +1,31 @@
+<!-- Login Screen -->
+<div class="flex flex-wrap justify-center">
+    <div class="m-2 border shadow-sm" *ngFor="let character of characters['results']">
+        <div class="bg-white max-w-sm rounded overflow-hidden shadow-lg ">
+            <img src={{character.image}} alt="Character Image" class="w-full">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">{{character.name}}</div>
+                <p class="text-gray-700 text-base">
+                    datos
+                </p>
+            </div>
+            <div class="flex justify-center">
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{character.status}}</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{character.species}}</span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{character.gender}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="flex flex-row justify-around md:justify-between mx-28 mt-8">
+    <button class="bg-gray-300 border text-gray-800 font-bold py-2 px-4 rounded-lg"
+    [disabled]="pageIndex < 2"
+    [ngClass]="{'opacity-50 cursor-not-allowed': pageIndex < 2}"
+    [ngStyle]="{'border-color': color}"
+    (click)="changePage(-1)">Prev</button>
+    <button class="bg-gray-300 border  text-gray-800 font-bold py-2 px-4 rounded-lg"
+    [disabled]="pageIndex > 41"
+    [ngClass]="{'opacity-50 cursor-not-allowed': pageIndex > 41}"
+    [ngStyle]="{'border-color': color}"
+    (click)="changePage(1)">Next</button>
+</div>
